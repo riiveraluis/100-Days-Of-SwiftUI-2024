@@ -5,6 +5,12 @@
 //  Created by Luis Rivera Rivera on 2/3/24.
 //
 
+// Challenges:
+/*
+ 1. Add a header to the third section, saying “Amount per person”
+ 2. Add another section showing the total amount for the check – i.e., the original amount plus tip value, without dividing by the number of people.
+ 3. Change the tip percentage picker to show a new screen rather than using a segmented control, and give it a wider range of options – everything from 0% to 100%. Tip: use the range 0..<101 for your range rather than a fixed array.
+ */
 import SwiftUI
 
 struct ContentView: View {
@@ -13,7 +19,15 @@ struct ContentView: View {
     @State private var tipAmount = 20
     @FocusState private var amountIsFocused:Bool
     
-    let tipPercentages = [10, 15, 20, 25, 0]
+    //    let tipPercentages = [10, 15, 20, 25, 0]
+    
+    var checkTotal: Double {
+        let tipSelection = Double(tipAmount)
+        let tipValue = checkAmount / 100 * tipSelection
+        let grandTotal = checkAmount + tipValue
+        
+        return grandTotal
+    }
     
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
@@ -26,11 +40,15 @@ struct ContentView: View {
         return amountPerPerson
     }
     
+    var localCurrency: String {
+        Locale.current.currency?.identifier ?? "USD"
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Check amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    TextField("Check amount", value: $checkAmount, format: .currency(code: localCurrency))
                         .keyboardType(.decimalPad)
                         .focused($amountIsFocused)
                     
@@ -41,17 +59,24 @@ struct ContentView: View {
                     }
                 }
                 
+                // Challenge 3
                 Section("How much tip do you want to leave?") {
                     Picker("Tip percentage", selection: $tipAmount) {
-                        ForEach(tipPercentages, id: \.self) {
-                            Text("\($0)%")
+                        ForEach(0..<101, id: \.self) {
+                                Text("\($0)%")
                         }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.navigationLink)
                 }
                 
-                Section {
-                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                // Challenge 2
+                Section("Total Amount") {
+                    Text(checkTotal, format: .currency(code: localCurrency))
+                }
+                
+                // Challenge 1
+                Section("Amount per person") {
+                    Text(totalPerPerson, format: .currency(code: localCurrency))
                 }
             }
             .navigationTitle("WeSplit")
