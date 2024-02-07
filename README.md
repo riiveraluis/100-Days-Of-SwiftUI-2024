@@ -17,5 +17,5 @@ Challenge days     |  1 / 1  | 100%
 
 | Projects / Topics                                                                           | Demo                                       |
 |----------------------------------------------------------------------------------------------|--------------------------------------------|
-| [Project 1](01-Project1) - *WeSplit* <br/>(with challenges)<br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | ![screen1](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/Project%20Demos/01%20-%20WeSplit)      |
+| [Project 1](01-Project1) - *WeSplit* <br/>(with challenges)<br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | ![screen1](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/01%20-%20WeSplit/WeSplit.gif)      |
 | [Challenge Day 1](02-ChallengeDay1) - *Unit Converter*                                        |                                            |
