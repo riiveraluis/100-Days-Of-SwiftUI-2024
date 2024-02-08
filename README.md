@@ -7,7 +7,7 @@ https://www.hackingwithswift.com/100/swiftui
 ## Completion status
 
 Type               | Number  | Completion
-:---               |  :---:  |   :---:
+:---:              |  :---:  |   :---:
 Projects           |  1 / 19 | In Progress
 Challenges         |  3 / 57 | In Progress
 Milestone Projects |  0 / 6  | In Progress
@@ -17,5 +17,6 @@ Challenge days     |  1 / 1  | 100%
 
 | Projects / Topics                                                                           | Demo                                                                                                    |
 |----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [Project 1](01-Project1) - *WeSplit* <br/>(with challenges)<br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/01%20-%20WeSplit/WeSplit.gif" width="200">      |
-| [Challenge Day 1](02-ChallengeDay1) - *Unit Converter*                                        | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/02%20-%20Challenge%20Day%201%20-%20Unit%20Converter/Challenge%20Day%201%20-%20Unit%20Converter.gif" width="200"> |
+| [Project 1](01-WeSplit) - *WeSplit* <br/>(with challenges)<br/><sub> Form, Section, NavigationView, @State property wrapper, TextField, Picker, ForEach </sub> | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/01%20-%20WeSplit/WeSplit.gif" width="200">      |
+| [Challenge Day 1](02-ChallengeDay1UnitConverter) - *Unit Converter*                                        | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/02%20-%20Challenge%20Day%201%20-%20Unit%20Converter/Challenge%20Day%201%20-%20Unit%20Converter.gif" width="200"> | 
+| [Project 2](03-GuessTheFlag) - *GuessTheFlag* <br/>(with challenges)<br/><sub> VStack, Image, LinearGradient, Alerts </sub> |
