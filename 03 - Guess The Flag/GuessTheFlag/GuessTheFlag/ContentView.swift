@@ -13,6 +13,14 @@ struct ContentView: View {
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
+    @State private var scoreMessage = ""
+    // Challenge 1
+    /* Add an @State property to store the user’s score, modify it when they get an answer right or wrong, then display it in the alert and in the score label. */
+    @State private var userScore = 0
+    // Challenge 3
+    /* Make the game show only 8 questions, at which point they see a final alert judging their score and can restart the game.*/
+    @State private var round = 1
+    @State private var isGameOverShowing = false
     
     var body: some View {
         ZStack {
@@ -58,7 +66,7 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
                 
-                Text("Score: ???")
+                Text("Score: \(userScore)")
                     .foregroundStyle(.white)
                     .font(.title.bold())
                 
@@ -69,22 +77,44 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score is ???")
+            scoreTitle == "Correct" ? Text("Your score is \(userScore)") : Text("\(scoreMessage)\nYour score is \(userScore)")
+        }
+        .alert("Game Completed", isPresented: $isGameOverShowing) {
+            Button("Try again", action: resetGame)
+        } message: {
+            Text("Your final score is \(userScore)")
         }
     }
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
             scoreTitle = "Correct"
+            userScore += 1
         } else {
             scoreTitle = "Wrong"
+            // Challenge 2
+            /* When someone chooses the wrong flag, tell them their mistake in your alert message – something like “Wrong! That’s the flag of France,” for example.*/
+            scoreMessage =  "That’s the flag of \(countries[number])"
+            userScore -= 1
         }
-        showingScore = true
+        
+        if round < 8 {
+            showingScore = true
+        } else {
+            isGameOverShowing = true
+        }
     }
     
     func askQuestion() {
+        round += 1
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func resetGame() {
+        userScore = 0
+        round = 1
+        askQuestion()
     }
 }
 
