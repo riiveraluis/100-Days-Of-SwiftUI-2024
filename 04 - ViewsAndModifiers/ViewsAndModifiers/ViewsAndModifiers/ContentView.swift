@@ -98,6 +98,21 @@ struct GridStack<Content: View>: View {
     }
 }
 
+// Challenge 1 (Last of Views and modifiers: Wrap up)
+struct ProminentTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundStyle(.blue)
+    }
+}
+
+extension View {
+    func prominentTitle() -> some View {
+        modifier(ProminentTitle())
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -128,6 +143,9 @@ struct ContentView: View {
                 Image(systemName: "\(row * 4 + col).circle")
                 Text("R\(row) C\(col)")
             }
+            
+            Text("Prominent title custom view modifier")
+                .prominentTitle()
         }
     }
 }
