@@ -5,6 +5,13 @@
 //  Created by Luis Rivera Rivera on 2/16/24.
 //
 
+// Challenges
+/*
+ 1. Disallow answers that are shorter than three letters or are just our start word.
+ 2. Add a toolbar button that calls startGame(), so users can restart with a new word whenever they want to.
+ 3. Put a text view somewhere so you can track and show the player’s score for a given root word. How you calculate score is down to you, but something involving number of words and their letter count would be reasonable.
+ */
+
 import SwiftUI
 
 struct ContentView: View {
@@ -15,6 +22,8 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    
+    @State private var score = 0
     
     var body: some View {
         NavigationStack {
@@ -32,10 +41,20 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section("Score") {
+                    Text("\(score)")
+                }
             }
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
+            // Challenge 2
+            .toolbar(content: {
+                Button("Refresh") {
+                    startGame()
+                }
+            })
             .alert(errorTitle, isPresented: $showingError) { } message: {
                 Text(errorMessage)
             }
@@ -46,8 +65,11 @@ struct ContentView: View {
         // lowercase and trim the word, to make sure we don't add duplicate words with case differences
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
-        // exit if the remaining string is empty
-        guard answer.count > 0 else { return }
+        // Challenge 1
+        guard answer != rootWord else { return }
+        
+        // exit if the remaining string is empty or word is less than 3 characters
+        guard answer.count >= 3 else { return }
         
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
@@ -68,6 +90,9 @@ struct ContentView: View {
             usedWords.insert(answer, at: 0)
         }
         newWord = ""
+        
+        // Challenge 3
+        score += answer.count
     }
     
     func startGame() {
