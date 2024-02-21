@@ -8,8 +8,8 @@ Solutions to Paul Hudson's "100 days of SwiftUI" projects and challenges.
 
 | Type               | Number   | Completion  |
 |:---:               |  :---:   |   :---:     |
-| Projects           |  4 / 19  | In Progress |
-| Challenges         |  12 / 57 | In Progress |
+| Projects           |  5 / 19  | In Progress |
+| Challenges         |  15 / 57 | In Progress |
 | Milestone Projects |  1 / 6   | In Progress |
 | Challenge days     |  1 / 1   | 100%        |
 
@@ -23,3 +23,4 @@ Solutions to Paul Hudson's "100 days of SwiftUI" projects and challenges.
 [Project 3](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/04%20-%20ViewsAndModifiers/ViewsAndModifiers) - *ViewsAndModifiers* <br/>(with challenges on project 1 and 2)<br/> | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/04%20-%20ViewsAndModifiers/ViewsAndModifiers.png" width="200"> |
 [Milestone Project 1](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/05%20-%20Milestone%20Projects%201-3%20Rock%2C%20Papers%2C%20and%20Scissors/Rock%2C%20Papers%2C%20and%20Scissors) - *Rock, Papers, and Scissors* | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/05%20-%20Rock%2C%20Papers%2C%20and%20Scissors/Rock%2C%20Papers%2C%20and%20Scissors.gif" width="200"> |
 [Project 4](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/06%20-%20BetterRest) - *BetterRest* <br/>(Stepper, DatePicker, DateFormatter, Date)<br/> | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/06%20-%20BetterRest/BetterRest.gif" width="200"> |
+[Project 5](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/07%20-%20WordScramble/WordScramble) - *Word Scramble* <br/>(List, Bundle, UITextChecker)<br/> | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/07%20-%20WordScramble/WordScramble.gif" width="200"> |
