@@ -33,6 +33,11 @@ struct ContentView: View {
     @State private var round = 1
     @State private var isGameOverShowing = false
     
+    // Challenge 5
+    // When you tap a flag, make it spin around 360 degrees on the Y axis.
+    @State private var flagsNotSelected = Array(repeating: false, count: 3)
+    @State private var rotationAmount = 0.0
+    
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -57,6 +62,7 @@ struct ContentView: View {
                         
                         Text(countries[correctAnswer])
                             .font(.largeTitle).fontWeight(.semibold)
+                            .animation(.default)
                     }
                     
                     ForEach(0..<3) { number in
@@ -64,6 +70,12 @@ struct ContentView: View {
                             flagTapped(number)
                         } label: {
                             FlagImage(imageName: countries[number])
+                                .rotation3DEffect(
+                                    .degrees(flagsNotSelected[number] ? -rotationAmount : rotationAmount),
+                                    axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/
+                                )
+                                .opacity(flagsNotSelected[number] ? 0.25 : 1.0) // Challenge 6 Make the other two buttons fade out to 25% opacity.
+                                .scaleEffect(flagsNotSelected[number] ? 0.75 : 1.0) // Challenge 7 Add a third effect of your choosing to the two flags the user didn’t choose – maybe make them scale down? Or flip in a different direction? Experiment!
                         }
                     }
                 }
@@ -78,6 +90,7 @@ struct ContentView: View {
                 Text("Score: \(userScore)")
                     .foregroundStyle(.white)
                     .font(.title.bold())
+                    .animation(.default)
                 
                 Spacer()
             }
@@ -96,6 +109,17 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        for index in 0..<3 {
+            withAnimation {
+                if index == number {
+                    flagsNotSelected[index] = false
+                    rotationAmount += 360.0
+                } else {
+                    flagsNotSelected[index] = true
+                }
+            }
+        }
+        
         if number == correctAnswer {
             scoreTitle = "Correct"
             userScore += 1
@@ -108,16 +132,22 @@ struct ContentView: View {
         }
         
         if round < 8 {
-            showingScore = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                showingScore = true
+            }
         } else {
             isGameOverShowing = true
         }
     }
     
     func askQuestion() {
-        round += 1
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        withAnimation(.bouncy) {
+            round += 1
+            rotationAmount = 0.0
+            flagsNotSelected = Array(repeating: false, count: 3)
+        }
     }
     
     func resetGame() {
