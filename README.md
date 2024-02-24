@@ -10,7 +10,7 @@ Solutions to Paul Hudson's "100 days of SwiftUI" projects and challenges.
 |:---:               |  :---:   |   :---:     |
 | Projects           |  6 / 19  | In Progress |
 | Challenges         |  18 / 57 | In Progress |
-| Milestone Projects |  1 / 6   | In Progress |
+| Milestone Projects |  2 / 6   | In Progress |
 | Challenge days     |  1 / 1   | 100%        |
 
 ## Preview
@@ -25,3 +25,4 @@ Solutions to Paul Hudson's "100 days of SwiftUI" projects and challenges.
 [Project 4](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/06%20-%20BetterRest) - *BetterRest* <br/>(Stepper, DatePicker, DateFormatter, Date)<br/> | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/06%20-%20BetterRest/BetterRest.gif" width="200"> |
 [Project 5](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/07%20-%20WordScramble/WordScramble) - *Word Scramble* <br/>(List, Bundle, UITextChecker)<br/> | <img src="https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/blob/main/Project%20Demos/07%20-%20WordScramble/WordScramble.gif" width="200"> |
 [Project 6](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/08%20-%20Animations/Animations) - *Animations* <br/>(implicit animations, explicit animations, binding animations)<br/> | <img src="" width="200"> |
+[Milestone Project 2](https://github.com/riiveraluis/100-Days-Of-SwiftUI-2024/tree/main/09%20-%20Milestone%20Projects%204-6%20Edutainment/Edutainment) - *Edutainment* | <img src="" width="200"> |
