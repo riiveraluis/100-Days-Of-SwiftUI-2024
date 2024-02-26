@@ -25,6 +25,7 @@ struct AddView: View {
         NavigationStack {
             Form {
                 TextField("Name", text: $name)
+                
                 Picker("Type", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)

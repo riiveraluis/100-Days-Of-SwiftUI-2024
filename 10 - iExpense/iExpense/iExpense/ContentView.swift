@@ -53,11 +53,15 @@ struct ContentView: View {
     }
     
     func removePersonalItems(at offsets: IndexSet) {
-        removeItems(at: offsets, in: expenses.personalExpenses)
+        withAnimation {
+            removeItems(at: offsets, in: expenses.personalExpenses)
+        }
     }
 
     func removeBusinessItems(at offsets: IndexSet) {
-        removeItems(at: offsets, in: expenses.businessExpenses)
+        withAnimation {
+            removeItems(at: offsets, in: expenses.businessExpenses)
+        }
     }
 }
 
