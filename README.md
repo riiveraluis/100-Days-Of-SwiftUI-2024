@@ -13,7 +13,7 @@ Solutions to Paul Hudson's "100 days of SwiftUI" projects and challenges.
 | Milestone Projects |  2 / 6   | In Progress |
 | Challenge days     |  1 / 1   | 100%        |
 
-## Preview
+## Project Showcase
 
 | Projects / Topics                                                                           | Demos                                                                                                    |
 |----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
